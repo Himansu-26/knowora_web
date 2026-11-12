@@ -15,7 +15,7 @@ const ACCESS_CODE = process.env.ACCESS_CODE || "";
 const COOKIE_SECRET = process.env.COOKIE_SECRET || "";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // Use a model ID enabled for your Google AI Studio key. Override this in Render if needed.
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
 const supabase = process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY
   ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } })
   : null;
