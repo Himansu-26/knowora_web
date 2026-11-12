@@ -24,7 +24,7 @@ app.set("trust proxy", 1);
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
 app.use(express.json({ limit: "100kb" }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname), { extensions: ["html"] }));
+app.use(express.static(path.join(__dirname, "public"), { extensions: ["html"] }));
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -149,7 +149,7 @@ app.get("/api/history", requireAuth, async (_req, res) => {
 app.get("/health", (_req, res) => res.json({ ok: true, service: "Knowora" }));
 app.use((req, res, next) => {
   if (req.path.startsWith("/api/")) return res.status(404).json({ error: "That feature is not available." });
-  res.sendFile(path.join(__dirname, "index.html"), err => err && next(err));
+  res.sendFile(path.join(__dirname, "public", "index.html"), err => err && next(err));
 });
 app.use((err, _req, res, _next) => {
   console.error(err.message);
