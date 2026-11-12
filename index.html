@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b2a"><meta name="description" content="Knowora helps you discover the things you see.">
+<title>Knowora — Discover what you see</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="loginScreen" class="login-screen">
+  <div class="login-card"><div class="brand-mark">K</div><p class="eyebrow">YOUR PRIVATE DISCOVERY SPACE</p><h1>Welcome to Knowora</h1><p class="muted">Unlock your personal visual encyclopedia.</p>
+  <form id="loginForm"><label for="accessCode">Private access code</label><input id="accessCode" type="password" autocomplete="current-password" placeholder="Enter your access code" required><button class="primary full" type="submit">Unlock Knowora</button></form><p id="loginMessage" class="message" aria-live="polite"></p></div>
+</div>
+<div id="app" class="hidden">
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark small">K</span><span>knowora</span></a>
+<nav><a href="#discover">Discover</a><a href="#how">How it works</a><a href="#history">Recent finds</a></nav><button id="logoutBtn" class="ghost small-btn">Lock site</button></header>
+<main>
+<section class="hero"><div class="hero-copy"><p class="eyebrow">LOOK CLOSER. KNOW MORE.</p><h1>Curiosity starts<br><em>with a picture.</em></h1><p>From a tiny garden visitor to a clever machine — discover what it is, how it works, and where it belongs.</p><a class="text-link" href="#discover">Start exploring <span>↘</span></a></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orb-card card-leaf">✿<small>nature</small></div><div class="orb-card card-camera">⌁<small>objects</small></div><div class="orb-card card-bird">⌁<small>wildlife</small></div><div class="hero-note">Everyday wonders,<br>explained simply.</div></div></section>
+<section id="discover" class="discover-section"><div class="section-heading"><div><p class="eyebrow">THE DISCOVERY DESK</p><h2>What did you find?</h2><p class="muted">Upload a photo, use your camera, or search by name.</p></div><span class="tiny-pill">ONE PHOTO · ONE AI REQUEST</span></div>
+<div class="workspace"><div class="upload-panel"><div id="dropZone" class="drop-zone"><div class="upload-icon">＋</div><h3>Bring your curiosity here</h3><p>Choose a photo of an animal, plant, product, machine or anything else.</p><div class="upload-actions"><label class="primary file-label">Choose photo<input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" hidden></label><label class="secondary file-label">Take a picture<input id="cameraInput" type="file" accept="image/*" capture="environment" hidden></label></div><p class="fine">JPG, PNG or WEBP · Maximum 6 MB · Only one image at a time</p></div>
+<div id="previewWrap" class="preview-wrap hidden"><img id="preview" alt="Selected photo preview"><div class="preview-bottom"><span id="fileName"></span><button id="removePhoto" class="ghost">Remove photo</button></div><button id="identifyBtn" class="primary full">Identify this photo <span>→</span></button></div>
+<div id="progress" class="progress hidden"><div class="spinner"></div><b>Looking closely…</b><span>Knowora is studying your photo. Please keep this page open.</span></div>
+</div>
+<div class="search-panel"><div class="search-icon">⌕</div><h3>Already know a word?</h3><p>Search your saved discoveries by name.</p><form id="searchForm" class="search-form"><input id="searchInput" placeholder="Try “squirrel” or “vacuum cleaner”" aria-label="Search saved discoveries"><button class="primary" type="submit">Search</button></form><div id="searchResults" class="search-results"><span class="fine">Your saved discoveries will appear here.</span></div><div class="search-tip">✦ <span>Tip: A clear photo with the subject in focus usually gives a better result.</span></div></div></div>
+<div id="resultArea" class="result-area hidden" aria-live="polite"></div>
+</section>
+<section class="category-strip"><div><span>01</span><b>Living things</b><small>Animals · Birds · Plants</small></div><div><span>02</span><b>Everyday objects</b><small>Tools · Appliances · Gear</small></div><div><span>03</span><b>Technology</b><small>Devices · Machines · Robots</small></div><div><span>04</span><b>Curious finds</b><small>Anything worth knowing</small></div></section>
+<section id="how" class="how-section"><p class="eyebrow">SIMPLE AS THAT</p><h2>From “what is that?”<br>to “now I know.”</h2><div class="steps"><article><span>1</span><h3>Capture</h3><p>Take a picture or choose one from your phone.</p></article><article><span>2</span><h3>Identify</h3><p>Gemini examines the image and suggests what it may be.</p></article><article><span>3</span><h3>Explore</h3><p>Read its purpose, features, facts and useful details.</p></article></div></section>
+<section id="history" class="history-section"><div class="section-heading"><div><p class="eyebrow">YOUR NOTEBOOK</p><h2>Recent discoveries</h2></div><button id="refreshHistory" class="secondary">Refresh</button></div><div id="historyList" class="history-list"><p class="muted">Your saved discoveries will show here after you connect Supabase.</p></div></section>
+</main><footer><a class="brand" href="#"><span class="brand-mark small">K</span> knowora</a><span>Stay curious. Discover responsibly.</span><span>Private project · Made for learning</span></footer>
+</div><script src="/app.js" defer></script></body></html>
